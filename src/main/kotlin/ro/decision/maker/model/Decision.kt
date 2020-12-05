@@ -5,11 +5,12 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "decision")
-data class Decision(
+open class Decision(
+
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  val id: UUID,
+  open var id: UUID? = null,
 
   @Column(nullable = false)
-  val name: String
+  open var name: String
 )
